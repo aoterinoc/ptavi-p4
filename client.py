@@ -14,9 +14,10 @@ coms = sys.argv
 if len(coms) == 6:
     SERVER = coms[1]
     PORT = int(coms[2])
+    METODO = coms[3]
     LINE = ""
     if coms[3] == "register":
-        LINE = "REGISTER sip:" + coms[4] + " SIP/2.0\r\n"
+        LINE = METODO.upper() + "sip:" + coms[4] + " SIP/2.0\r\n"
         LINE += "Expires: " + coms[5] + "\r\n"
 
 else:
